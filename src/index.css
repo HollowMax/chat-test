@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,143 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.chat {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 50px;
+
+  height: 100%;
+  width: 100%;
+
+  background-image: linear-gradient(
+    to top left,
+    rgba(252, 176, 69, 1) 0%,
+    rgba(233, 253, 29, 1) 57%,
+    rgba(58, 85, 180, 1) 100%
+  );
+
+  padding: 60px 25%;
+}
+
+.message {
+  position: relative;
+  background-color: rgb(215, 188, 31);
+
+  padding: 30px 20px;
+}
+
+.message__avatar-container {
+  position: absolute;
+  top: -25px;
+  left: -20px;
+
+  display: flex;
+  align-items: center;
+}
+
+.message__avatar-img {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(160, 119, 4);
+
+  margin-right: -5px;
+  border-radius: 100%;
+}
+
+.message__avatar-name {
+  height: 30px;
+  width: 150px;
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  background-color: rgb(160, 119, 4);
+
+  padding: 0 10px;
+}
+
+.message__delete-btn {
+  position: absolute;
+
+  top: -5px;
+  right: -5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(160, 119, 4);
+
+  border: none;
+  border-radius: 100%;
+
+  cursor: pointer;
+}
+
+.message__delete-btn:hover,
+.message__delete-btn:focus {
+  background-color: rgb(123, 93, 11);
+}
+
+.input {
+  position: relative;
+
+  padding: 0 20px;
+}
+
+.input__text-area {
+  width: 100%;
+  height: 80px;
+
+  resize: none;
+
+  border-color: brown;
+}
+
+.input__text-area:focus {
+  outline: 1px solid rgb(93, 22, 22);
+}
+
+.input__btn {
+  position: absolute;
+  bottom: -5px;
+  right: -10px;
+
+  width: 60px;
+  height: 20px;
+  background-color: brown;
+
+  border: none;
+
+  box-shadow: 4px 2px 3px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.input__btn:hover,
+.input__btn:focus {
+  background-color: rgb(143, 38, 38);
+}
+
+.messages-list {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 40px;
+
+  padding: 30px 20px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
 }
